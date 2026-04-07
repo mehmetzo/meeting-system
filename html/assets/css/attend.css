@@ -1,0 +1,179 @@
+/* Katýlým (QR) Ekraný Stilleri */
+:root {
+  --green:      #2ecc71;
+  --green-dark: #27ae60;
+  --dark:       #1a2e4a;
+  --gray:       #6c757d;
+  --border:     #e9ecef;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 15px; }
+body.attend-body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #f0f4f8;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.attend-container {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px 28px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+}
+
+.attend-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.attend-logo { height: 52px; object-fit: contain; }
+.attend-logo-icon {
+  width: 52px; height: 52px;
+  background: var(--dark);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 1.4rem;
+}
+.attend-institution strong { display: block; font-size: 0.82rem; color: var(--dark); font-weight: 700; }
+.attend-institution span   { font-size: 0.72rem; color: var(--gray); }
+
+.attend-meeting-info {
+  text-align: center;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+.attend-meeting-info h1 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+.attend-meta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.attend-meta span { font-size: 0.75rem; color: var(--gray); display: flex; align-items: center; gap: 4px; }
+
+.attend-title {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+.attend-subtitle { text-align: center; color: var(--gray); font-size: 0.82rem; margin-bottom: 20px; }
+
+/* Tabs */
+.attend-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1.5px solid var(--border);
+  margin-bottom: 20px;
+}
+.attend-tab {
+  padding: 11px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  background: #fff;
+  border: none;
+  color: var(--gray);
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.attend-tab.active { background: var(--green); color: #fff; }
+
+/* Form */
+.attend-form .form-group { margin-bottom: 14px; }
+.attend-form label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #555;
+  margin-bottom: 5px;
+}
+.attend-form .form-control {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+.attend-form .form-control:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(46,204,113,0.1);
+}
+.input-icon { position: relative; display: flex; align-items: center; }
+.input-icon .form-control { padding-right: 36px; }
+.toggle-pass {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--gray);
+}
+
+.btn-attend {
+  width: 100%;
+  padding: 14px;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-attend:hover { background: var(--green-dark); }
+.required { color: #e74c3c; }
+
+.attend-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.72rem;
+  color: var(--gray);
+}
+
+/* Success ekraný */
+.success-container { text-align: center; }
+.success-icon { font-size: 4rem; color: var(--green); margin: 16px 0; }
+.success-container h2 { font-size: 1.3rem; color: var(--dark); margin-bottom: 8px; }
+.success-container p  { color: var(--gray); font-size: 0.9rem; }
+.success-time { margin-top: 16px; font-size: 0.8rem; color: var(--gray); }
+.success-type { margin: 12px 0; }
+.badge { padding: 4px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; }
+.badge-primary   { background: #cce5ff; color: #004085; }
+.badge-secondary { background: #e2e3e5; color: #383d41; }
+.alert-warning   { background: #fff3cd; color: #856404; padding: 12px; border-radius: 8px; font-size: 0.85rem; }
