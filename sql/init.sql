@@ -151,7 +151,7 @@ INSERT IGNORE INTO `admin_users`
   (`username`, `password`, `full_name`, `email`, `role`, `is_active`)
 VALUES (
   'admin',
-  '$2y$12$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+  '$2y$10$eaXkXpS1w.xfM7R3x67Tm.yD6OZdcIYao8duqaq1sfB.6YO4byjMy',
   'Sistem Yoneticisi',
   'admin@hastane.gov.tr',
   'superadmin',
