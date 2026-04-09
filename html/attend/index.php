@@ -170,7 +170,7 @@ $green = '#1e7e34';
 <body class="attend-body">
 <div class="attend-container">
 
-  <!-- Baþlýk -->
+  <!-- BaÃ¾lÃ½k -->
   <div class="attend-header">
     <?php if ($logoPath && file_exists('/var/www/html'.$logoPath)): ?>
       <img src="<?= htmlspecialchars($logoPath, ENT_QUOTES, 'UTF-8') ?>" alt="Logo" class="attend-logo">
@@ -190,7 +190,7 @@ $green = '#1e7e34';
     </div>
   </div>
 
-  <!-- Toplantý Bilgisi -->
+  <!-- ToplantÃ½ Bilgisi -->
   <div class="attend-meeting-info">
     <h1><?= htmlspecialchars($meeting['title'], ENT_QUOTES, 'UTF-8') ?></h1>
     <div class="attend-meta">
@@ -262,11 +262,11 @@ $green = '#1e7e34';
     </form>
   </div>
 
-  <!-- MÝSAFÝR FORMU (LDAP aktif) -->
+  <!-- MÃSAFÃR FORMU (LDAP aktif) -->
   <div id="formGuest" class="attend-form" style="display:none">
 
   <?php else: ?>
-  <!-- LDAP kapalý: sadece misafir formu, sekme yok -->
+  <!-- LDAP kapalÃ½: sadece misafir formu, sekme yok -->
   <div id="formGuest" class="attend-form">
   <?php endif; ?>
 
@@ -296,7 +296,7 @@ $green = '#1e7e34';
         <label><?= $LANG['field_phone'] ?> <span class="required">*</span></label>
         <input type="tel" name="phone" id="phoneInput" class="form-control"
                placeholder="5XX XXX XX XX"
-               maxlength="11" pattern="[0-9]{11}" inputmode="numeric" required>
+               maxlength="10" pattern="[0-9]{10}" inputmode="numeric" required>
       </div>
       <button type="submit" class="btn-attend"><?= $LANG['btn_save'] ?></button>
     </form>
