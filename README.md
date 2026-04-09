@@ -68,6 +68,7 @@
 ```bash
 git clone https://github.com/mehmetzo/meeting-system.git
 cd meeting-system
+chmod -R 777 html/assets/img/
 ```
 
 ### 2. Container'ları başlatın
