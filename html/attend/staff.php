@@ -33,7 +33,7 @@ if (!$ldap->isEnabled()) {
     exit;
 }
 
-$result = $ldap->authenticate($username, $password);
+$result = $ldap->authenticate($username, $password, false);
 
 error_log('[STAFF] user=' . $username . ' success=' . ($result['success'] ? 'true' : 'false') . ' error=' . ($result['error'] ?? ''));
 
