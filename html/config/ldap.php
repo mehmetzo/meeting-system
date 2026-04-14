@@ -28,7 +28,7 @@ class LdapAuth {
 
     public function isEnabled(): bool { return $this->enabled; }
 
-    public function authenticate(string $username, string $password): array {
+    public function authenticate(string $username, string $password, bool $checkGroup = true): array {
         if (!$this->enabled || empty($this->host)) {
             return ['success' => false, 'error' => 'LDAP yapilandirilmamis'];
         }
@@ -63,7 +63,7 @@ class LdapAuth {
         $userData = $this->getUserInfo($conn, $username);
 
         // Grup kontrolü (grup tanımlıysa)
-        if (!empty($this->group)) {
+        if ($checkGroup && !empty($this->group)) {
             $inGroup = $this->checkGroup($conn, $username);
             if (!$inGroup) {
                 ldap_close($conn);
