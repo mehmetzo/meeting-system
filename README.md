@@ -68,17 +68,16 @@
 ```bash
 git clone https://github.com/mehmetzo/meeting-system.git
 cd meeting-system
+```
+### 2. Klasör izinlerini ayarlayın
+```bash
 chmod -R 777 html/assets/img/
 ```
-
 ### 2. Container'ları başlatın
-
 ```bash
 docker compose up -d --build
 ```
-
 ### 4. Admin girişi
-
 ```
 URL      : http://SUNUCU_IP:6767/admin/login.php
 Kullanıcı: admin
