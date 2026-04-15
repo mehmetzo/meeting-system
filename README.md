@@ -61,7 +61,7 @@
 
 ---
 
-🚀 Kurulum
+## 🚀 Kurulum
 1. Repoyu klonlayın
 ```bash
 git clone https://github.com/mehmetzo/meeting-system.git
@@ -82,7 +82,7 @@ Kullanıcı: admin
 Şifre    : admin
 ```
 
-🌐 Erişim Adresleri
+## 🌐 Erişim Adresleri
 
 | Sayfa | URL |
 |-------|-----|
@@ -92,14 +92,14 @@ Kullanıcı: admin
 
 ```
 
-📱 Kullanım
+## 📱 Kullanım
 Toplantı Akışı aşağıdaki gibi gerçekleşir.
 - QR kodu toplantı salonuna asın veya ekrana yansıtın. Katılımcılar telefon kamerasıyla okutarak forma ulaşır.
 - QR Okut → Personel / Misafir Seç → Formu Doldur → Kaydet → Onay Ekranı
 - QR Okut → Personel → LDAP Kullanıcı Adı & Şifre → Kaydet
 - QR Okut → Misafir → Ad Soyad, Kurum, Unvan, E-posta, Telefon → Kaydet
 ```
-⚙️ Ayarlar
+## ⚙️ Ayarlar
 
 Tüm sistem ayarları **Admin Paneli → Ayarlar** üzerinden yapılır, herhangi bir dosya düzenlemeye gerek yok.
 
