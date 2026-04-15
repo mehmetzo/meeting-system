@@ -62,9 +62,7 @@
 ---
 
 ## 🚀 Kurulum
-
 ### 1. Repoyu klonlayın
-
 ```bash
 git clone https://github.com/mehmetzo/meeting-system.git
 cd meeting-system
@@ -84,10 +82,6 @@ Kullanıcı: admin
 Şifre    : admin
 ```
 
-> ⚠️ İlk girişten sonra **Ayarlar → Şifre Değiştir** kısmından şifrenizi değiştirin.
-
----
-
 ## 🌐 Erişim Adresleri
 
 | Sayfa | URL |
@@ -96,165 +90,26 @@ Kullanıcı: admin
 | 🔧 Admin Paneli | `http://SUNUCU_IP:6767/admin/login.php` |
 | 🗄️ Veritabanı (dış) | `SUNUCU_IP:3310` |
 
----
+```
 
 ## 📱 Kullanım
-
-QR kodu toplantı salonuna asın veya ekrana yansıtın. Katılımcılar telefon kamerasıyla okutarak forma ulaşır.
-
-### Katılım Akışı
-
+Toplantı Akışı aşağıdaki gibi gerçekleşir.
+- QR kodu toplantı salonuna asın veya ekrana yansıtın. Katılımcılar telefon kamerasıyla okutarak forma ulaşır.
+- QR Okut → Personel / Misafir Seç → Formu Doldur → Kaydet → Onay Ekranı
+- QR Okut → Personel → LDAP Kullanıcı Adı & Şifre → Kaydet
+- QR Okut → Misafir → Ad Soyad, Kurum, Unvan, E-posta, Telefon → Kaydet
 ```
-QR Okut → Personel / Misafir Seç → Formu Doldur → Kaydet → Onay Ekranı
-```
-
-### Personel Akışı (LDAP aktif)
-
-```
-QR Okut → Personel → LDAP Kullanıcı Adı & Şifre → Kaydet
-         → TC No ve Telefon LDAP'tan otomatik çekilir → Rapora yansır
-```
-
-### Misafir Akışı
-
-```
-QR Okut → Misafir → Ad Soyad, Kurum, Unvan, E-posta, Telefon → Kaydet
-```
-
----
-
-## 🖥️ Admin Paneli
-
-### Toplantı Yönetimi
-
-| Özellik | Açıklama |
-|---------|----------|
-| Toplantı Oluştur | Ad, tarih, saat ve konum bilgisiyle yeni toplantı |
-| QR Kod | A4 yatay baskıya uygun QR çıktısı |
-| Rapor | Katılımcı listesi, personel/misafir ayrımı |
-| Tamamla | Toplantıyı kapatır, yeni katılım engellenir |
-| Sil | Toplantı ve tüm katılım kayıtlarını siler |
-
-### Yetkiler
-
-| Özellik | Superadmin | Admin | Viewer |
-|---------|-----------|-------|--------|
-| Toplantı oluştur | ✅ | ✅ | ✅ |
-| QR görüntüle | ✅ | ✅ | ✅ |
-| Rapor görüntüle | ✅ | ✅ | ✅ |
-| Dışa aktar | ✅ | ✅ | ❌ |
-| Toplantı sil | ✅ | ❌ | ❌ |
-| Erişim logları | ✅ | ❌ | ❌ |
-| Sistem ayarları | ✅ | ❌ | ❌ |
-
----
 
 ## ⚙️ Ayarlar
 
-Tüm sistem ayarları **Admin Paneli → Ayarlar** üzerinden yapılır.
-
-### 🏥 Kurum Ayarları
-- Kurum adı ve hastane/birim adı
-- Kurum logosu yükleme (PNG, JPG, SVG — max 2MB)
-- Footer metni
-- Tema rengi
-
-### 🔐 LDAP Ayarları
+Tüm sistem ayarları **Admin Paneli → Ayarlar** üzerinden yapılır, herhangi bir dosya düzenlemeye gerek yok.
 
 ```
-Host      : Active Directory sunucu IP
-Port      : 389
-Base DN   : dc=domain,dc=local
-Domain    : domain.local
-Bind User : servis_hesabi
-Grup      : yetkili_grup (opsiyonel)
-TC Attr   : employeeID
-Tel Attr  : mobile
+🔐 LDAP Ayarları
+- Host      : Active Directory sunucu IP
+- Port      : 389
+- Base DN   : dc=domain,dc=local
+- Domain    : domain.local
+- Bind User : servis_hesabi
+- Grup      : yetkili_grup (opsiyonel)
 ```
-
----
-
-## 🔒 Güvenlik
-
-| Özellik | Açıklama |
-|---------|----------|
-| **LDAP Entegrasyonu** | Kurumsal AD hesaplarıyla merkezi kimlik doğrulama |
-| **Grup Bazlı Yetki** | Sadece belirlenen AD grubundaki kullanıcılar giriş yapabilir |
-| **Erişim Logları** | Tüm admin işlemleri kullanıcı bazlı kayıt altında |
-| **Session Güvenliği** | 60 dakikalık oturum süresi, HTTPOnly cookie |
-| **Rol Yönetimi** | superadmin / admin / viewer rol hiyerarşisi |
-| **QR Token** — | Her toplantı için kriptografik güvenli token |
-| **Tamamlanmış Koruma** | Kapatılan toplantılara yeni katılım engeli |
-
----
-
-## 📁 Proje Yapısı
-
-```
-meeting-system/
-├── docker-compose.yml
-├── Dockerfile
-├── apache/
-│   └── 000-default.conf
-├── php/
-│   └── php.ini
-├── mysql/
-│   └── my.cnf
-├── sql/
-│   └── init.sql
-└── html/
-    ├── index.php
-    ├── config/
-    │   ├── database.php
-    │   ├── session.php
-    │   └── ldap.php
-    ├── includes/
-    │   ├── lang.php
-    │   ├── header.php
-    │   ├── sidebar.php
-    │   └── footer.php
-    ├── admin/
-    │   ├── login.php
-    │   ├── logout.php
-    │   ├── index.php
-    │   ├── meetings.php
-    │   ├── meeting_detail.php
-    │   ├── export.php
-    │   ├── reports.php
-    │   ├── logs.php
-    │   ├── settings.php
-    │   └── api.php
-    ├── meeting/
-    │   ├── create.php
-    │   ├── qr.php
-    │   └── report.php
-    ├── attend/
-    │   ├── index.php
-    │   ├── staff.php
-    │   ├── guest.php
-    │   └── success.php
-    └── assets/
-        ├── css/
-        │   ├── style.css
-        │   └── attend.css
-        ├── js/
-        │   └── app.js
-        └── img/
-```
-
----
-
-## 🗄️ Veritabanı Şeması
-
-```
-settings         — Sistem yapılandırması
-admin_users      — Admin kullanıcıları ve roller
-meetings         — Toplantı kayıtları
-attendees        — Katılımcı kayıtları (personel & misafir)
-access_logs      — Erişim ve işlem logları
-ldap_users_cache — LDAP kullanıcı önbelleği
-```
-
-<div align="center">
-  <sub>Kurumsal toplantı yönetimi için dijital dönüşüm 📅</sub>
-</div>
