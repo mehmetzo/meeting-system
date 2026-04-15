@@ -61,28 +61,28 @@
 
 ---
 
-## 🚀 Kurulum
-### 1. Repoyu klonlayın
+🚀 Kurulum
+1. Repoyu klonlayın
 ```bash
 git clone https://github.com/mehmetzo/meeting-system.git
 cd meeting-system
 ```
-### 2. Klasör izinlerini ayarlayın
+2. Klasör izinlerini ayarlayın
 ```bash
 chmod -R 777 html/assets/img/
 ```
-### 2. Container'ları başlatın
+2. Container'ları başlatın
 ```bash
 docker compose up -d --build
 ```
-### 4. Admin girişi
+4. Admin girişi
 ```
 URL      : http://SUNUCU_IP:6767/admin/login.php
 Kullanıcı: admin
 Şifre    : admin
 ```
 
-## 🌐 Erişim Adresleri
+🌐 Erişim Adresleri
 
 | Sayfa | URL |
 |-------|-----|
@@ -92,15 +92,14 @@ Kullanıcı: admin
 
 ```
 
-## 📱 Kullanım
+📱 Kullanım
 Toplantı Akışı aşağıdaki gibi gerçekleşir.
 - QR kodu toplantı salonuna asın veya ekrana yansıtın. Katılımcılar telefon kamerasıyla okutarak forma ulaşır.
 - QR Okut → Personel / Misafir Seç → Formu Doldur → Kaydet → Onay Ekranı
 - QR Okut → Personel → LDAP Kullanıcı Adı & Şifre → Kaydet
 - QR Okut → Misafir → Ad Soyad, Kurum, Unvan, E-posta, Telefon → Kaydet
 ```
-
-## ⚙️ Ayarlar
+⚙️ Ayarlar
 
 Tüm sistem ayarları **Admin Paneli → Ayarlar** üzerinden yapılır, herhangi bir dosya düzenlemeye gerek yok.
 
